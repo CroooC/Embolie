@@ -139,7 +139,7 @@ button {
 
 .link_icon img {
     /* width: auto; */
-    max-height: var(--size-l);
+    max-height: var(--size-xxxl);
     transition: opacity var(--transition);
 }
 

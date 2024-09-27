@@ -13,6 +13,7 @@ h1 {
     color: var(--color-w);
     margin: 0;
     padding: var(--size-l) auto;
+    text-align: center;
 }
 
 #image-track {
