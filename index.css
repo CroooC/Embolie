@@ -1,10 +1,18 @@
-body {
+main {
     height: 100vh;
     width: 100vw;
     background-color: var(--color-bord);
     margin: 0rem;
     overflow: hidden;
     font-family: var(--ff1);
+    position: relative;
+}
+
+h1 {
+    font: var(--h1);
+    color: var(--color-w);
+    margin: 0;
+    padding: var(--size-l) auto;
 }
 
 #image-track {
