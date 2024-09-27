@@ -9,7 +9,6 @@
 
     --ff2: "DM Sans", sans-serif;
     --ff1: "Verdana", sans-serif;
-    /* --h1: bold max(4rem, 4vw) / max(1rem, 5vw) var(--ff1); */
     --h1: bold 4rem/1em var(--ff1);
     --h2: bold 3rem/1.2em var(--ff1);
     --h3: bold 2.25rem/1.2em var(--ff1);
@@ -138,10 +137,6 @@ button {
 
 /* Logos link */
 
-/* .link_icon {
-    max-width: 100%;
-} */
-
 .link_icon img {
     /* width: auto; */
     max-height: var(--size-l);
@@ -171,13 +166,14 @@ header {
     padding: var(--size-xxs);
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     /* z-index: 3; */
 }
 
 nav[aria-label="default_main_menu"] {
     flex: 1;
-    justify-content: left;
+    justify-content: center;
+    text-align: center;
 }
 
 nav a {
