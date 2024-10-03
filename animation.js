@@ -1,3 +1,5 @@
+// IMG DRAGGING
+
 const track = document.getElementById("image-track");
 
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
@@ -15,17 +17,17 @@ const handleOnMove = e => {
 
     const percentage = (mouseDelta / maxDelta) * -100,
         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 25), -65);
 
     track.dataset.percentage = nextPercentage;
 
     track.animate({
-        transform: `translate(${nextPercentage}%, -50%)`
+        transform: `translate(${nextPercentage}%, 0%)`
     }, { duration: 1200, fill: "forwards" });
 
     for (const image of track.getElementsByClassName("image")) {
         image.animate({
-            objectPosition: `${100 + nextPercentage}% center`
+            objectPosition: `${65 + nextPercentage}% center`
         }, { duration: 1200, fill: "forwards" });
     }
 }
@@ -44,6 +46,31 @@ window.onmousemove = e => handleOnMove(e);
 
 window.ontouchmove = e => handleOnMove(e.touches[0]);
 
+
+// SCROLLING
+
+// Create an IntersectionObserver instance
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // If the image is in the viewport, add the 'visible' class to start animation
+            entry.target.classList.add('visible');
+        } else {
+            // If the image is out of the viewport, remove the 'visible' class to reset animation
+            entry.target.classList.remove('visible');
+        }
+    });
+}, {
+    threshold: 0.01 // Trigger when 30% of the element is visible
+});
+
+// Target all elements with the class 'photo'
+const photos = document.querySelectorAll('.photo');
+
+// Observe each photo
+photos.forEach(photo => {
+    observer.observe(photo);
+});
 
 
 // LOADING DISPLAY

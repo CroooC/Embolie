@@ -159,9 +159,9 @@ svg:hover {
 /* Header */
 
 header {
-    width: 100%;
+    width: auto;
     background-color: var(--color-w);
-    position: relative;
+    /* position: relative; */
     color: var(--color-b);
     padding: var(--size-xxs);
     display: flex;
