@@ -47,6 +47,47 @@ window.onmousemove = e => handleOnMove(e);
 window.ontouchmove = e => handleOnMove(e.touches[0]);
 
 
+// ABOUT
+
+const letters ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+document.getElementById("title").onmouseover = event => {
+    let iterations = 0;
+
+    const interval = setInterval(() => {
+        event.target.innerText = event.target.innerText.split("")
+            .map((letter, index) => {
+                if(index < iterations) {
+                    return event.target.dataset.value[index];
+                }
+                return letters[Math.floor(Math.random() * 26)]
+            })
+            .join("");
+
+        if(iterations >= event.target.dataset.value.length){
+            clearInterval(interval);
+        }
+
+        iterations += 1/3;
+    }, 30);
+}
+
+const enhance = id => {
+    const element = document.getElementById(id),
+        text = element.innerText.split("");
+
+    element.innerText = "";
+
+    text.forEach(lettre => {
+        const span = document.createElement("span");
+        span.className = "letter";
+        span.innerText = lettre;
+        element.appendChild(span);
+    });
+}
+
+enhance("channel-link");
+
+
 // SCROLLING
 
 // Create an IntersectionObserver instance

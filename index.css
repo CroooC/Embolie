@@ -65,6 +65,72 @@ h2 {
     color: var(--color-w);
 }
 
+.about p, a {
+    color: var(--color-w);
+    font-size: var(--size-xxxl);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.about a {
+    text-decoration: none;
+}
+
+.about h3 {
+    font: var(--h3);
+    color: var(--color-w);
+}
+
+.line {
+    display: flex;
+    justify-content: space-between;
+}
+
+#text:has(.fancy:hover) .word:not(.fancy:hover) {
+    opacity: 0.2;
+}
+
+.fancy > .letter {
+    display: inline-block;
+    transition: transform 350ms ease;
+}
+
+.fancy:hover > .letter {
+    transition-duration: 800ms;
+}
+
+.fancy:hover > .letter:nth-child(1) {
+    transform: translate(-40%, 60%) rotate(8deg);
+}
+
+.fancy:hover > .letter:nth-child(2) {
+    transform: translate(-40%, 20%) rotate(4deg);
+}
+
+.fancy:hover > .letter:nth-child(3) {
+    transform: translate(-10%, 60%) rotate(-8deg);
+}
+
+.fancy:hover > .letter:nth-child(4) {
+    transform: translate(0%, -20%) rotate(5deg);
+}
+
+.fancy:hover > .letter:nth-child(5) {
+    transform: translate(-20%, 30%) rotate(-3deg);
+}
+
+.fancy:hover > .letter:nth-child(6) {
+    transform: translate(0%, -40%) rotate(-5deg);
+}
+
+.fancy:hover > .letter:nth-child(7) {
+    transform: translate(0%, 15%) rotate(10deg);
+}
+
+.fancy:hover > .letter:nth-child(8) {
+    transform: translate(50%, -10%) rotate(-3deg);
+}
+
 
 /* LIST */
 
