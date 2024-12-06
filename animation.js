@@ -88,32 +88,6 @@ const enhance = id => {
 enhance("channel-link");
 
 
-// SCROLLING
-
-// Create an IntersectionObserver instance
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // If the image is in the viewport, add the 'visible' class to start animation
-            entry.target.classList.add('visible');
-        } else {
-            // If the image is out of the viewport, remove the 'visible' class to reset animation
-            entry.target.classList.remove('visible');
-        }
-    });
-}, {
-    threshold: 0.01 // Trigger when 30% of the element is visible
-});
-
-// Target all elements with the class 'photo'
-const photos = document.querySelectorAll('.photo');
-
-// Observe each photo
-photos.forEach(photo => {
-    observer.observe(photo);
-});
-
-
 // LOADING DISPLAY
 
 // Show the loading overlay when the page starts loading

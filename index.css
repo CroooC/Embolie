@@ -81,6 +81,23 @@ h2 {
     color: var(--color-w);
 }
 
+.autoRotate {
+    animation: autoRotateAnimation;
+    animation-timeline: view();
+    height: 20rem;
+}
+
+@keyframes autoRotateAnimation {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* SPECIAL TEXT */
+
 .line {
     display: flex;
     justify-content: space-between;
@@ -147,14 +164,19 @@ h2 {
 .photo {
     width: 100%;
     margin-bottom: 1em;
-    opacity: 0;
-    transform: scale(0.5);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
 }
 
-.photo.visible {
-    opacity: 1;
-    transform: scale(1);
+@keyframes autoShowAnimation {
+    from{
+        opacity: 0;
+        transform: translateY(12rem) scale(0.3);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* SMALL LIST */
