@@ -17,34 +17,34 @@ const handleOnMove = e => {
 
     const percentage = (mouseDelta / maxDelta) * -100,
         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 25), -65);
+        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100); /*25), -65 */
 
     track.dataset.percentage = nextPercentage;
 
     track.animate({
-        transform: `translate(${nextPercentage}%, 0%)`
+        transform: `translate(${nextPercentage}%, -50%)` /*0% */
     }, { duration: 1200, fill: "forwards" });
 
     for (const image of track.getElementsByClassName("image")) {
         image.animate({
-            objectPosition: `${65 + nextPercentage}% center`
+            objectPosition: `${100 + nextPercentage}% center` /*65*/
         }, { duration: 1200, fill: "forwards" });
     }
 }
 
 /* -- Had to add extra lines for touch events -- */
 
-window.onmousedown = e => handleOnDown(e);
+// window.onmousedown = e => handleOnDown(e);
 
-window.ontouchstart = e => handleOnDown(e.touches[0]);
+// window.ontouchstart = e => handleOnDown(e.touches[0]);
 
-window.onmouseup = e => handleOnUp(e);
+// window.onmouseup = e => handleOnUp(e);
 
-window.ontouchend = e => handleOnUp(e.touches[0]);
+// window.ontouchend = e => handleOnUp(e.touches[0]);
 
-window.onmousemove = e => handleOnMove(e);
+// window.onmousemove = e => handleOnMove(e);
 
-window.ontouchmove = e => handleOnMove(e.touches[0]);
+// window.ontouchmove = e => handleOnMove(e.touches[0]);
 
 
 // ABOUT
