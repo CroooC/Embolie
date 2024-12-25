@@ -9,16 +9,16 @@
 
     --ff2: "DM Sans", sans-serif;
     --ff1: "Verdana", sans-serif;
-    --h1: bold 4rem/1em var(--ff1);
-    --h2: bold 3rem/1.2em var(--ff1);
-    --h3: bold 2.25rem/1.2em var(--ff1);
-    --h4: bold 1.16rem/1.6em var(--ff1);
-    --p: 1rem/1.6em var(--ff1);
-    --smalltext: 0.75rem/2em var(--ff1);
+    --h1: bold 4rem/1rem var(--ff1);
+    --h2: bold 3rem/1.2rem var(--ff1);
+    --h3: bold 2.25rem/1.2rem var(--ff1);
+    --h4: bold 1.16rem/1.6rem var(--ff1);
+    --p: 1rem/1.6rem var(--ff1);
+    --smalltext: 0.75rem/2rem var(--ff1);
 
-    --links-primary: bold 1rem/1em var(--ff1) var(--color-blue);
-    --links-secondary: bold 1rem/1em var(--ff1) var(--color-y);
-    --links-third: bold underline 0.75rem/1.25em var(--ff1) var(--color-bord);
+    --links-primary: bold 1rem/1rem var(--ff1) var(--color-blue);
+    --links-secondary: bold 1rem/1rem var(--ff1) var(--color-y);
+    --links-third: bold underline 0.75rem/1.25rem var(--ff1) var(--color-bord);
 
     --transition: 0.3s ease-in-out;
 
@@ -165,14 +165,23 @@ header {
     color: var(--color-b);
     padding: var(--size-xxs);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     /* z-index: 3; */
 }
 
 nav[aria-label="default_main_menu"] {
     flex: 1;
     justify-content: center;
+    text-align: center;
+}
+
+nav h3 {
+    font: var(--h3);
+    color: var(--color-bord);
+    margin: 0;
+    padding: var(--size-s) 0 var(--size-s);
     text-align: center;
 }
 
@@ -188,11 +197,19 @@ nav a:hover {
     color: var(--color-bord);
 }
 
+nav p {
+    font: var(--smalltext);
+    color: var(--color-bord);
+    margin: 0;
+    padding: var(--size-xxs) 0 var(--size-xxs);
+    text-align: center;
+}
+
 /* Footer */
 
 footer {
     display: grid;
-    grid-template-columns: 15% 1fr 15%;
+    grid-template-columns: 20% 1fr 20%;
     /* 20% for #stats-column, 1fr for #game-content */
     grid-gap: 2rem;
     align-items: center;
@@ -206,7 +223,7 @@ footer {
 }
 
 .copyright h4 {
-    font: var(--p);
+    font: var(--smalltext);
     color: var(--color-g);
     font-weight: normal;
 }
@@ -215,6 +232,10 @@ footer {
     font: var(--smalltext);
     color: var(--color-lg);
     /* padding: var(--size-xxl) var(--size-xs) 0 0; */
+}
+
+.links {
+    text-align: center;
 }
 
 /* Loading Page */
