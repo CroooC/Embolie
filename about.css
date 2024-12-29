@@ -23,7 +23,7 @@ h2 {
     text-align: center;
 }
 
-h4 {
+.about h4 {
     font: var(--h4);
     color: var(--color-w);
     margin: 0;
@@ -42,14 +42,14 @@ li {
     list-style-type: none;
 }
 
-p, a {
+p, .about a {
     color: var(--color-w);
     font-size: var(--size-xxxl);
     margin: 0;
     text-transform: uppercase;
 }
 
-a {
+.about a {
     text-decoration: none;
 }
 

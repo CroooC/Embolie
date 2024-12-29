@@ -73,15 +73,6 @@ h2 {
     text-decoration: none;
 }
 
-/* .intro li {
-    color: var(--color-w);
-}
-
-.intro h3 {
-    font: var(--h3);
-    color: var(--color-w);
-} */
-
 .autoRotate {
     display: flex;
     justify-self: center;
@@ -152,7 +143,7 @@ h2 {
 
 /* LIST */
 
-.collection {
+.home-collection {
     margin: 0 var(--size-5xl);
 }
 
@@ -225,4 +216,23 @@ h2 {
 .item img {
     /* height: 5rem; */
     width: 10rem;
+}
+
+/* HOME ABOUT */
+.home-about {
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    width: 40rem;
+    text-align: left;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.home-about li {
+    color: var(--color-w);
+}
+
+.home-about h3 {
+    font: var(--h3);
+    color: var(--color-w);
 }

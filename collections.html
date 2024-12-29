@@ -22,19 +22,53 @@
     </header>
 
     <main>
-        <div id="summer" class="collection">
-            <h2>Summer Collection</h2>
-            <!-- Summer content -->
-        </div>
+        <div id="collections-container">
+            <div id="summer" class="collection">
+                <h2>Summer Collection</h2>
+                <div class="img">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                </div>
+            </div>
 
-        <div id="winter" class="collection">
-            <h2>Winter Collection</h2>
-            <!-- Winter content -->
-        </div>
+            <div id="winter" class="collection">
+                <h2>Winter Collection</h2>
+                <div class="img">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                </div>
+            </div>
 
-        <div id="spring" class="collection">
-            <h2>Spring Collection</h2>
-            <!-- Spring content -->
+            <div id="spring" class="collection">
+                <h2>Spring Collection</h2>
+                <div class="img">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                </div>
+            </div>
+            <div id="automn" class="collection">
+                <h2>Automn Collection</h2>
+                <div class="img">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                    <img class="photo" src="img/logo/no_img.jpeg" alt="">
+                </div>
+            </div>
         </div>
     </main>
 
@@ -51,7 +85,7 @@
             </a>
         </div>
         <div class="version">
-            <p>v0.0.8</p>
+            <p>v0.0.9</p>
         </div>
     </footer>
 
@@ -66,6 +100,7 @@
     <script>
         // Show the correct collection when page loads
         window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('collections-container');
             const urlParams = new URLSearchParams(window.location.search);
             const collection = urlParams.get('collection');
 
@@ -80,9 +115,13 @@
                 if (selectedCollection) {
                     selectedCollection.classList.add('active');
                 }
+            } else {
+                // No specific collection requested, show all
+                container.classList.add('show-all');
             }
         });
     </script>
+    <script src="animation.js"></script>
 </body>
 
 </html>

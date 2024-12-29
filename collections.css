@@ -22,7 +22,22 @@ h2 {
     text-align: center;
 }
 
-h3 {
+/* COLLECTION */
+
+/* #collections-container {
+    margin: 0 var(--size-5xl);
+} */
+
+.collection {
+    display: none;
+    margin: 0 var(--size-5xl);
+}
+
+.collection.active {
+    display: block;
+}
+
+.collection h3 {
     font: var(--h3);
     color: var(--color-bord);
     margin: 0;
@@ -30,12 +45,19 @@ h3 {
     text-align: center;
 }
 
-/* COLLECTION */
-
-.collection {
-    display: none;
+.show-all .collection {
+    display: block;
+    padding-bottom: 1rem;
 }
 
-.collection.active {
-    display: block;
+.img {
+    columns: 18rem;
+    padding: var(--size-m) 0;
+}
+
+.photo {
+    width: 100%;
+    margin-bottom: 1em;
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
 }

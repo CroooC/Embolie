@@ -137,6 +137,10 @@ button {
 
 /* Logos link */
 
+.link_icon p:hover {
+    text-decoration: underline;
+}
+
 .link_icon img {
     /* width: auto; */
     max-height: var(--size-xxxl);
