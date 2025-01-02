@@ -22,19 +22,75 @@
     </header>
 
     <main>
-        <div id="summer" class="collection">
-            <h2>Summer Collection</h2>
-            <!-- Summer content -->
-        </div>
+        <div class="products-container">
+            <div id="one" class="product">
+                <div class="product-image-container">
+                    <img src="img/logo/no_img.jpeg" alt="Product Name" class="product-image">
+                </div>
 
-        <div id="winter" class="collection">
-            <h2>Winter Collection</h2>
-            <!-- Winter content -->
-        </div>
+                <div class="product-details">
+                    <h2 class="product-title">Elegant Summer Dress</h2>
 
-        <div id="spring" class="collection">
-            <h2>Spring Collection</h2>
-            <!-- Spring content -->
+                    <p class="product-description">
+                        A lightweight, flowing summer dress perfect for warm days and special occasions.
+                        Made from 100% sustainable cotton with a subtle floral pattern and elegant drape.
+                    </p>
+
+                    <div class="product-price">$129.99</div>
+
+                    <div class="stock-status">
+                        <span class="stock-dot"></span>
+                        In Stock
+                    </div>
+
+                    <div>
+                        <h3>Color</h3>
+                        <div class="color-options">
+                            <div class="color-option selected" style="background-color: #ffe2af"></div>
+                            <div class="color-option" style="background-color: #ffafa9"></div>
+                            <div class="color-option" style="background-color: #fd7070"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Size</h3>
+                        <div class="size-options">
+                            <div class="size-option">XS</div>
+                            <div class="size-option selected">S</div>
+                            <div class="size-option">M</div>
+                            <div class="size-option">L</div>
+                            <div class="size-option">XL</div>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div id="two" class="product">
+                <h2>Two Product</h2>
+                <!-- Winter content -->
+            </div>
+
+            <div id="three" class="product">
+                <h2>Three Product</h2>
+                <!-- Spring content -->
+            </div>
+
+            <div id="four" class="product">
+                <h2>Three Product</h2>
+                <!-- Spring content -->
+            </div>
+
+            <div id="five" class="product">
+                <h2>Three Product</h2>
+                <!-- Spring content -->
+            </div>
+
+            <div id="six" class="product">
+                <h2>Three Product</h2>
+                <!-- Spring content -->
+            </div>
         </div>
     </main>
 
@@ -50,9 +106,9 @@
                 </svg>
             </a>
         </div>
-        <div class="version">
+        <!-- <div class="version">
             <p>v0.0.8</p>
-        </div>
+        </div> -->
     </footer>
 
     <div id="loading-overlay" style="display: none;">
@@ -66,23 +122,44 @@
     <script>
         // Show the correct collection when page loads
         window.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('products-container');
             const urlParams = new URLSearchParams(window.location.search);
-            const collection = urlParams.get('collection');
+            const product = urlParams.get('product');
 
-            if (collection) {
+            if (product) {
                 // Hide all collections
-                document.querySelectorAll('.collection').forEach(el => {
+                document.querySelectorAll('.product').forEach(el => {
                     el.classList.remove('active');
                 });
 
                 // Show the requested collection
-                const selectedCollection = document.getElementById(collection);
-                if (selectedCollection) {
-                    selectedCollection.classList.add('active');
+                const selectedProduct = document.getElementById(product);
+                if (selectedProduct) {
+                    selectedProduct.classList.add('active');
                 }
+            } else {
+                // No specific collection requested, show all
+                container.classList.add('show-all');
             }
         });
+
+        // Color selection
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('.color-option.selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
+
+        // Size selection
+        document.querySelectorAll('.size-option').forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelector('.size-option.selected').classList.remove('selected');
+                option.classList.add('selected');
+            });
+        });
     </script>
+    <script src="animation.js"></script>
 </body>
 
 </html>

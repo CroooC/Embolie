@@ -1,5 +1,4 @@
 // IMG DRAGGING
-
 const track = document.getElementById("image-track");
 
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
@@ -48,7 +47,6 @@ const handleOnMove = e => {
 
 
 // ABOUT
-
 const letters ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 document.getElementById("title").onmouseover = event => {
     let iterations = 0;
@@ -89,7 +87,6 @@ enhance("channel-link");
 
 
 // LOADING DISPLAY
-
 // Show the loading overlay when the page starts loading
 document.getElementById("loading-overlay").style.display = "flex";
 
