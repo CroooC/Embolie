@@ -73,6 +73,10 @@ h2 {
     text-decoration: none;
 }
 
+.rotate_img {
+    background: url(img/logo/Bannière.jpg);
+}
+
 .autoRotate {
     display: flex;
     justify-self: center;
@@ -109,7 +113,7 @@ h2 {
 }
 
 .fancy:hover > .letter:nth-child(1) {
-    transform: translate(-40%, 60%) rotate(8deg);
+    transform: translate(-40%, -20%) rotate(8deg);
 }
 
 .fancy:hover > .letter:nth-child(2) {
