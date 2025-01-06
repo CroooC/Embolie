@@ -128,7 +128,7 @@
                 </a>
             </div>
             <div class="version">
-                <p>v0.1.1</p>
+                <p>v0.1.2</p>
             </div>
         </footer>
 
@@ -140,6 +140,24 @@
             </section>
         </div>
 
+        <script>
+            // ABOUT
+            const enhance = id => {
+                const element = document.getElementById(id),
+                    text = element.innerText.split("");
+
+                element.innerText = "";
+
+                text.forEach(lettre => {
+                    const span = document.createElement("span");
+                    span.className = "letter";
+                    span.innerText = lettre;
+                    element.appendChild(span);
+                });
+            }
+
+            enhance("channel-link");
+        </script>
         <script src="animation.js"></script>
     </body>
 </html>

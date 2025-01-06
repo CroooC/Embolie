@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="produits.css" />
+    <link rel="stylesheet" href="product.css" />
     <link rel="icon" type="image/x-icon" href="icon.ico">
     <title>Embolie</title>
 </head>
@@ -299,41 +299,7 @@
         </section>
     </div>
 
-    <script>
-        // Show the correct collection when page loads
-        window.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const product = urlParams.get('product');
-
-            // Hide all products
-            document.querySelectorAll('.product').forEach(el => {
-                el.classList.remove('active');
-            });
-
-            // Show the requested product
-            const selectedProduct = document.getElementById(product);
-            if (selectedProduct) {
-                selectedProduct.classList.add('active');
-                selectedProduct.querySelector('.product-title').textContent = product;
-            }
-        });
-
-        // Color selection
-        document.querySelectorAll('.color-option').forEach(option => {
-            option.addEventListener('click', () => {
-                document.querySelector('.color-option.selected').classList.remove('selected');
-                option.classList.add('selected');
-            });
-        });
-
-        // Size selection
-        document.querySelectorAll('.size-option').forEach(option => {
-            option.addEventListener('click', () => {
-                document.querySelector('.size-option.selected').classList.remove('selected');
-                option.classList.add('selected');
-            });
-        });
-    </script>
+    <script src="product.js"></script>
     <script src="animation.js"></script>
 </body>
 

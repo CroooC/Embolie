@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="produits.css" />
+    <link rel="stylesheet" href="product.css" />
     <link rel="icon" type="image/x-icon" href="icon.ico">
     <title>Embolie</title>
 </head>
@@ -34,8 +34,16 @@
 
             <!-- PRODUCT ONE -->
             <div id="flamme_de_campanule" class="product">
-                <div class="product-image-container">
-                    <img src="img/collection/ectoplasme/DSC_5391.JPG" alt="flamme_de_campanule" class="product-image">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/ectoplasme/DSC_5391.JPG" alt="Main product view" class="main-image">
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="img/collection/ectoplasme/DSC_5391.JPG" alt="Product thumbnail 1" class="thumbnail active" onclick="changeImage(this)">
+                        <img src="img/collection/ectoplasme/IMG_0442.JPG" alt="Product thumbnail 2" class="thumbnail" onclick="changeImage(this)">
+                        <!-- <img src="/api/placeholder/600/800" alt="Product thumbnail 3" class="thumbnail" onclick="changeImage(this)">
+                            <img src="/api/placeholder/600/800" alt="Product thumbnail 4" class="thumbnail" onclick="changeImage(this)"> -->
+                    </div>
                 </div>
 
                 <div class="product-details">
@@ -65,8 +73,14 @@
 
             <!-- PRODUCT TWO -->
             <div id="acanthocyte" class="product">
-                <div class="product-image-container">
-                    <img src="img/collection/ectoplasme/DSC_5409.JPG" alt="acanthocyte" class="product-image">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/ectoplasme/DSC_5409.JPG" alt="Main product view" class="main-image">
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="img/collection/ectoplasme/DSC_5409.JPG" alt="Product thumbnail 1" class="thumbnail active" onclick="changeImage(this)">
+                        <img src="img/collection/ectoplasme/IMG_0470.JPG" alt="Product thumbnail 2" class="thumbnail" onclick="changeImage(this)">
+                    </div>
                 </div>
 
                 <div class="product-details">
@@ -98,17 +112,7 @@
             <div id="make_offer" class="product">
                 <div class="product-images">
                     <div class="main-image-container">
-                        <img src="img/collection/ectoplasme/DSC_5394.JPG" alt="Main product view" class="main-image" id="mainImage">
-                    </div>
-                    <div class="thumbnail-container">
-                        <img src="img/collection/ectoplasme/DSC_5399.JPG" alt="Product thumbnail 1" class="thumbnail active"
-                            onclick="changeImage(this, 'img/collection/ectoplasme/DSC_5399.JPG')">
-                        <img src="img/collection/ectoplasme/DSC_5394.JPG" alt="Product thumbnail 2" class="thumbnail"
-                            onclick="changeImage(this, 'img/collection/ectoplasme/DSC_5394.JPG')">
-                        <!-- <img src="/api/placeholder/600/800" alt="Product thumbnail 3" class="thumbnail"
-                            onclick="changeImage(this, '/api/placeholder/600/800')">
-                        <img src="/api/placeholder/600/800" alt="Product thumbnail 4" class="thumbnail"
-                            onclick="changeImage(this, '/api/placeholder/600/800')"> -->
+                        <img src="img/collection/ectoplasme/DSC_5394.JPG" alt="Main product view" class="main-image">
                     </div>
                 </div>
 
@@ -128,8 +132,12 @@
 
                     <h3>Color</h3>
                     <div class="color-options">
-                        <div class="color-option selected" style="background-color: #39bd1b"></div>
-                        <div class="color-option" style="background-color: #ffffff"></div>
+                        <div class="color-option selected"
+                            style="background-color: #39bd1b"
+                            data-image="img/collection/ectoplasme/DSC_5394.JPG"></div>
+                        <div class="color-option"
+                            style="background-color: #ffffff"
+                            data-image="img/collection/ectoplasme/DSC_5399.JPG"></div>
                         <!-- <div class="color-option" style="background-color: #fd7070"></div> -->
                     </div>
 
@@ -388,53 +396,7 @@
         </section>
     </div>
 
-    <script>
-        // Show the correct collection when page loads
-        window.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const product = urlParams.get('product');
-
-            // Hide all products
-            document.querySelectorAll('.product').forEach(el => {
-                el.classList.remove('active');
-            });
-
-            // Show the requested product
-            const selectedProduct = document.getElementById(product);
-            if (selectedProduct) {
-                selectedProduct.classList.add('active');
-                selectedProduct.querySelector('.product-title').textContent = product;
-            }
-        });
-
-        // Change photo
-        function changeImage(thumbnail, imageUrl) {
-            // Update main image
-            document.getElementById('mainImage').src = imageUrl;
-
-            // Update thumbnail selection
-            document.querySelectorAll('.thumbnail').forEach(thumb => {
-                thumb.classList.remove('active');
-            });
-            thumbnail.classList.add('active');
-        }
-
-        // Color selection
-        document.querySelectorAll('.color-option').forEach(option => {
-            option.addEventListener('click', () => {
-                document.querySelector('.color-option.selected').classList.remove('selected');
-                option.classList.add('selected');
-            });
-        });
-
-        // Size selection
-        document.querySelectorAll('.size-option').forEach(option => {
-            option.addEventListener('click', () => {
-                document.querySelector('.size-option.selected').classList.remove('selected');
-                option.classList.add('selected');
-            });
-        });
-    </script>
+    <script src="product.js"></script>
     <script src="animation.js"></script>
 </body>
 

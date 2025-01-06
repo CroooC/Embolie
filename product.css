@@ -67,8 +67,8 @@ h3 {
 }
 
 .main-image-container {
-    width: 100%;
-    aspect-ratio: 3/4;
+    width: 80%;
+    aspect-ratio: 4/4;
     overflow: hidden;
 }
 

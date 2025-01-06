@@ -1,35 +1,35 @@
 // IMG DRAGGING
-const track = document.getElementById("image-track");
+// const track = document.getElementById("image-track");
 
-const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+// const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
-const handleOnUp = () => {
-    track.dataset.mouseDownAt = "0";
-    track.dataset.prevPercentage = track.dataset.percentage;
-}
+// const handleOnUp = () => {
+//     track.dataset.mouseDownAt = "0";
+//     track.dataset.prevPercentage = track.dataset.percentage;
+// }
 
-const handleOnMove = e => {
-    if (track.dataset.mouseDownAt === "0") return;
+// const handleOnMove = e => {
+//     if (track.dataset.mouseDownAt === "0") return;
 
-    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth / 2;
+//     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+//         maxDelta = window.innerWidth / 2;
 
-    const percentage = (mouseDelta / maxDelta) * -100,
-        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100); /*25), -65 */
+//     const percentage = (mouseDelta / maxDelta) * -100,
+//         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+//         nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100); /*25), -65 */
 
-    track.dataset.percentage = nextPercentage;
+//     track.dataset.percentage = nextPercentage;
 
-    track.animate({
-        transform: `translate(${nextPercentage}%, -50%)` /*0% */
-    }, { duration: 1200, fill: "forwards" });
+//     track.animate({
+//         transform: `translate(${nextPercentage}%, -50%)` /*0% */
+//     }, { duration: 1200, fill: "forwards" });
 
-    for (const image of track.getElementsByClassName("image")) {
-        image.animate({
-            objectPosition: `${100 + nextPercentage}% center` /*65*/
-        }, { duration: 1200, fill: "forwards" });
-    }
-}
+//     for (const image of track.getElementsByClassName("image")) {
+//         image.animate({
+//             objectPosition: `${100 + nextPercentage}% center` /*65*/
+//         }, { duration: 1200, fill: "forwards" });
+//     }
+// }
 
 /* -- Had to add extra lines for touch events -- */
 
@@ -46,44 +46,28 @@ const handleOnMove = e => {
 // window.ontouchmove = e => handleOnMove(e.touches[0]);
 
 
-// ABOUT
-const letters ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+// ANIMATED TITLE
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 document.getElementById("title").onmouseover = event => {
     let iterations = 0;
 
     const interval = setInterval(() => {
         event.target.innerText = event.target.innerText.split("")
             .map((letter, index) => {
-                if(index < iterations) {
+                if (index < iterations) {
                     return event.target.dataset.value[index];
                 }
                 return letters[Math.floor(Math.random() * 26)]
             })
             .join("");
 
-        if(iterations >= event.target.dataset.value.length){
+        if (iterations >= event.target.dataset.value.length) {
             clearInterval(interval);
         }
 
-        iterations += 1/3;
+        iterations += 1 / 3;
     }, 30);
 }
-
-const enhance = id => {
-    const element = document.getElementById(id),
-        text = element.innerText.split("");
-
-    element.innerText = "";
-
-    text.forEach(lettre => {
-        const span = document.createElement("span");
-        span.className = "letter";
-        span.innerText = lettre;
-        element.appendChild(span);
-    });
-}
-
-enhance("channel-link");
 
 
 // LOADING DISPLAY
