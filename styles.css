@@ -9,18 +9,19 @@
 
     --ff2: "DM Sans", sans-serif;
     --ff1: "Verdana", sans-serif;
-    --h1: bold 4rem/1rem var(--ff1);
-    --h2: bold 3rem/1.2rem var(--ff1);
-    --h3: bold 2.25rem/1.2rem var(--ff1);
-    --h4: bold 1.16rem/1.6rem var(--ff1);
-    --p: 1rem/1.6rem var(--ff1);
-    --smalltext: 0.75rem/2rem var(--ff1);
+
+    --h1: bold max(4rem, 4vw) / max(3.75rem, 2vw) var(--ff1);
+    --h2: bold max(3rem, 3vw) / max(3.5rem, 2vw) var(--ff1);
+    --h3: bold max(2.25rem, 2.25vw) / max(2.75rem, 1.2vw) var(--ff1);
+    --h4: bold max(1.16rem, 1.16vw) / max(1.75rem, 1vw) var(--ff1);
+    --p: max(1rem, 1vw) / max(1.5rem, 1vw) var(--ff1);
+    --smalltext: max(0.75rem, 0.75vw) / max(1.25rem, 0.6vw) var(--ff1);
 
     --links-primary: bold 1rem/1rem var(--ff1) var(--color-blue);
     --links-secondary: bold 1rem/1rem var(--ff1) var(--color-y);
     --links-third: bold underline 0.75rem/1.25rem var(--ff1) var(--color-bord);
 
-    --transition: 0.3s ease-in-out;
+    --transition: 0.2s ease-in-out;
 
     --shadow: #00000030 0px 5px 10px 5px;
     --shadowwhite: #ffffff30 0px 5px 10px 5px;
@@ -290,5 +291,16 @@ footer {
 @keyframes rotate {
     to {
         transform: rotate(1turn)
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    :root {
+        --h1: bold max(2rem, 3vw) / max(1.6rem, 1.5vw) var(--ff1);
+        --h2: bold max(1.5rem, 2vw) / max(1.4rem, 1.2vw) var(--ff1);
+        --h3: bold max(1.25rem, 1.5vw) / max(1.2rem, 1vw) var(--ff1);
+        --h4: max(1.16rem, 1.16vw) / max(1.2rem, 0.8vw) var(--ff1);
+        --p: max(0.9rem, 1vw) / max(1rem, 0.6vw) var(--ff1);
+        --smalltext: max(0.7rem, 0.7vw) / max(0.8rem, 0.5vw) var(--ff1);
     }
 }

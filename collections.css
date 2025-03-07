@@ -58,6 +58,7 @@ h2 {
 .photo {
     width: 100%;
     margin-bottom: 1em;
+    border-radius: 8px;
     animation: autoShowAnimation both;
     animation-timeline: view(70% 5%);
 }
@@ -71,5 +72,15 @@ h2 {
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .collection {
+        margin: 0 var(--size-xl);
+    }
+
+    .img {
+        columns: 7rem;
     }
 }

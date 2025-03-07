@@ -29,7 +29,7 @@ h2 {
 
 h3 {
     font: var(--h3);
-    color: var(--color-bord);
+    color: var(--color-w);
     margin: 0;
     padding: var(--size-s) 0 var(--size-s);
     text-align: center;
@@ -57,6 +57,7 @@ h3 {
     width: 100%;
     aspect-ratio: 3/4;
     object-fit: cover;
+    border-radius: 8px;
     background: #f5f5f5;
 }
 
@@ -111,7 +112,7 @@ h3 {
 }
 
 .product-title {
-    font-size: 2rem;
+    font: var(--h2);
     margin: 0;
     text-transform: uppercase;
 }
@@ -204,8 +205,16 @@ h3 {
     border-radius: 50%;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     .product {
         grid-template-columns: 1fr;
+    }
+
+    .product-title{
+        padding: 1rem 0 0;
+    }
+
+    .product-description {
+        margin: 0;
     }
 }
