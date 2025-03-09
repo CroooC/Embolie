@@ -30,10 +30,13 @@
 
     <main>
         <div class="products-container">
+
             <!-- PRODUCT ONE -->
             <div id="acanthocyte" class="product">
-                <div class="product-image-container">
-                    <img src="img/collection/hematies/IMG-20250104-WA0008.jpg" alt="acanthocyte" class="product-image">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/hematies/Acanthocyte1.jpg" alt="Main product view" class="main-image">
+                    </div>
                 </div>
 
                 <div class="product-details">
@@ -50,14 +53,18 @@
                         In Stock
                     </div>
 
-                    <!-- <div>
-                        <h3>Color</h3>
-                        <div class="color-options">
-                            <div class="color-option selected" style="background-color: #ffe2af"></div>
-                            <div class="color-option" style="background-color: #ffafa9"></div>
-                            <div class="color-option" style="background-color: #fd7070"></div>
+                    <h3>Color</h3>
+                    <div class="color-options">
+                        <div class="color-option selected"
+                            style="background-color: #ffffffb7"
+                            data-image="img/collection/hematies/Acanthocyte1.jpg">
                         </div>
-                    </div> -->
+                        <div class="color-option"
+                            style="background-color: #be1616bb"
+                            data-image="img/collection/hematies/Acanthocyte2.jpg">
+                        </div>
+                        <!-- <div class="color-option" style="background-color: #fd7070"></div> -->
+                    </div>
 
                     <div>
                         <h3>Size</h3>
@@ -76,8 +83,10 @@
 
             <!-- PRODUCT TWO -->
             <div id="echinocyte" class="product">
-                <div class="product-image-container">
-                    <img src="img/collection/hematies/IMG-20250104-WA0009.jpg" alt="echinocyte" class="product-image">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/hematies/Echinocyte.jpg" alt="echinocyte" class="main-image">
+                    </div>
                 </div>
 
                 <div class="product-details">
@@ -109,8 +118,10 @@
 
             <!-- PRODUCT THREE -->
             <div id="stomatocyte" class="product">
-                <div class="product-image-container">
-                    <img src="img/collection/hematies/IMG-20250104-WA0010.jpg" alt="stomatocyte" class="product-image">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/hematies/Stomatocyte.jpg" alt="stomatocyte" class="main-image">
+                    </div>
                 </div>
 
                 <div class="product-details">
@@ -142,8 +153,10 @@
 
             <!-- PRODUCT FOUR -->
             <div id="macrocyte" class="product">
-                <div class="product-image-container">
-                    <img src="img/collection/hematies/IMG-20250104-WA0011.jpg" alt="macrocyte" class="product-image">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/hematies/Macrocyte.jpg" alt="macrocyte" class="main-image">
+                    </div>
                 </div>
 
                 <div class="product-details">
@@ -175,8 +188,10 @@
 
             <!-- PRODUCT FIVE -->
             <div id="dacrocyte" class="product">
-                <div class="product-image-container">
-                    <img src="img/collection/hematies/IMG-20250104-WA0012.jpg" alt="dacrocyte" class="product-image">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/hematies/Dacrocyte1.jpg" alt="dacrocyte" class="main-image">
+                    </div>
                 </div>
 
                 <div class="product-details">
@@ -191,6 +206,19 @@
                     <div class="stock-status in-stock">
                         <span class="in-stock-dot"></span>
                         In Stock
+                    </div>
+
+                    <h3>Color</h3>
+                    <div class="color-options">
+                        <div class="color-option selected"
+                            style="background-color: #ffffffb7"
+                            data-image="img/collection/hematies/Dacrocyte1.jpg">
+                        </div>
+                        <div class="color-option"
+                            style="background-color: #be1616bb"
+                            data-image="img/collection/hematies/Dacrocyte2.jpg">
+                        </div>
+                        <!-- <div class="color-option" style="background-color: #fd7070"></div> -->
                     </div>
 
                     <div>
@@ -208,8 +236,18 @@
 
             <!-- PRODUCT SIX -->
             <div id="eccentrocyte" class="product">
-                <div class="product-image-container">
-                    <img src="img/collection/hematies/IMG-20250104-WA0013.jpg" alt="eccentrocyte" class="product-image">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/hematies/Eccentrocyte_b.jpg" alt="Main product view" class="main-image">
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="img/collection/hematies/Eccentrocyte_b.jpg" alt="Product thumbnail 1" class="thumbnail active"
+                            onclick="changeImage(this)">
+                        <img src="img/collection/hematies/Eccentrocyte2.jpg" alt="Product thumbnail 2" class="thumbnail"
+                            onclick="changeImage(this)">
+                        <!-- <img src="/api/placeholder/600/800" alt="Product thumbnail 3" class="thumbnail" onclick="changeImage(this)">
+                                                                                <img src="/api/placeholder/600/800" alt="Product thumbnail 4" class="thumbnail" onclick="changeImage(this)"> -->
+                    </div>
                 </div>
 
                 <div class="product-details">
@@ -241,8 +279,139 @@
 
             <!-- PRODUCT SEVEN -->
             <div id="drepanocyte" class="product">
-                <div class="product-image-container">
-                    <img src="img/collection/hematies/IMG-20250104-WA0014.jpg" alt="drepanocyte" class="product-image">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/hematies/Drepanocyte1.jpg" alt="Main product view" class="main-image">
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="img/collection/hematies/Drepanocyte1.jpg" alt="Product thumbnail 1" class="thumbnail active"
+                            onclick="changeImage(this)">
+                        <img src="img/collection/hematies/Drepanocyte2.jpg" alt="Product thumbnail 2" class="thumbnail"
+                            onclick="changeImage(this)">
+                        <!-- <img src="/api/placeholder/600/800" alt="Product thumbnail 3" class="thumbnail" onclick="changeImage(this)">
+                                                            <img src="/api/placeholder/600/800" alt="Product thumbnail 4" class="thumbnail" onclick="changeImage(this)"> -->
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <h2 class="product-title"></h2>
+
+                    <p class="product-description">
+                        Boucles d’oreille découpée au laser dans du plexiglas de couleur rouge, fait main.
+                    </p>
+
+                    <div class="product-price">25.- la paire</div>
+
+                    <div class="stock-status in-stock">
+                        <span class="in-stock-dot"></span>
+                        In Stock
+                    </div>
+
+                    <div>
+                        <h3>Size</h3>
+                        <div class="size-options">
+                            <div class="size-option selected">S</div>
+                            <div class="size-option">M</div>
+                            <div class="size-option">L</div>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- PRODUCT HEIGHT -->
+            <div id="prod1" class="product">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/hematies/prod1.jpg" alt="prod1" class="main-image">
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <h2 class="product-title"></h2>
+
+                    <p class="product-description">
+                        Boucles d’oreille découpée au laser dans du plexiglas de couleur rouge, fait main.
+                    </p>
+
+                    <div class="product-price">25.- la paire</div>
+
+                    <div class="stock-status in-stock">
+                        <span class="in-stock-dot"></span>
+                        In Stock
+                    </div>
+
+                    <div>
+                        <h3>Size</h3>
+                        <div class="size-options">
+                            <div class="size-option selected">S</div>
+                            <div class="size-option">M</div>
+                            <div class="size-option">L</div>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- PRODUCT NINE -->
+            <div id="prod2" class="product">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/hematies/prod2a.jpg" alt="Main product view" class="main-image">
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="img/collection/hematies/prod2a.jpg" alt="Product thumbnail 1" class="thumbnail active"
+                            onclick="changeImage(this)">
+                        <img src="img/collection/hematies/prod2b.jpg" alt="Product thumbnail 2" class="thumbnail"
+                            onclick="changeImage(this)">
+                        <!-- <img src="/api/placeholder/600/800" alt="Product thumbnail 3" class="thumbnail" onclick="changeImage(this)">
+                                                                            <img src="/api/placeholder/600/800" alt="Product thumbnail 4" class="thumbnail" onclick="changeImage(this)"> -->
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <h2 class="product-title"></h2>
+
+                    <p class="product-description">
+                        Boucles d’oreille découpée au laser dans du plexiglas de couleur rouge, fait main.
+                    </p>
+
+                    <div class="product-price">25.- la paire</div>
+
+                    <div class="stock-status in-stock">
+                        <span class="in-stock-dot"></span>
+                        In Stock
+                    </div>
+
+                    <div>
+                        <h3>Size</h3>
+                        <div class="size-options">
+                            <div class="size-option selected">S</div>
+                            <div class="size-option">M</div>
+                            <div class="size-option">L</div>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- PRODUCT TEN -->
+            <div id="prod3" class="product">
+                <div class="product-images">
+                    <div class="main-image-container">
+                        <img src="img/collection/hematies/prod3a.jpg" alt="Main product view" class="main-image">
+                    </div>
+                    <div class="thumbnail-container">
+                        <img src="img/collection/hematies/prod3a.jpg" alt="Product thumbnail 1" class="thumbnail active"
+                            onclick="changeImage(this)">
+                        <img src="img/collection/hematies/prod3b.jpg" alt="Product thumbnail 2" class="thumbnail"
+                            onclick="changeImage(this)">
+                        <!-- <img src="/api/placeholder/600/800" alt="Product thumbnail 3" class="thumbnail" onclick="changeImage(this)">
+                                                                                        <img src="/api/placeholder/600/800" alt="Product thumbnail 4" class="thumbnail" onclick="changeImage(this)"> -->
+                    </div>
                 </div>
 
                 <div class="product-details">
